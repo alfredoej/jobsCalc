@@ -2,6 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const ProfileController = require('./controllers/ProfileController');
 const JobController = require('./controllers/JobController');
+const DashboardController = require('./controllers/DashboardController');
 
 //const basePath = __dirname + "/views";
 //o EJS já espera a pasta views poe isso não precisa setar o comando com __dirname
@@ -9,7 +10,7 @@ const JobController = require('./controllers/JobController');
 // com EJS utilizar o render e o nome do arquivo é sem extensão
 
 //request, response
-routes.get('/', JobController.index);
+routes.get('/', DashboardController.index);
 routes.get('/job', JobController.create);
 routes.post('/job', JobController.save);
 routes.get('/job/:id', JobController.show);
